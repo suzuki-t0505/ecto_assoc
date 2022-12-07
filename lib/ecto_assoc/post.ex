@@ -5,5 +5,7 @@ defmodule EctoAssoc.Post do
     field :header, :string
     field :body, :string
     belongs_to :user, EctoAssoc.User
+    has_many :likes, EctoAssoc.Like
+    has_many :users, through: [:likes, :user]
   end
 end
